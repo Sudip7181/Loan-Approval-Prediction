@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<meta property="og:site_name" content="" />
+	<meta property="og:site" content="" /> 
+	<meta property="og:title" content=""/> 
+	<meta property="og:description" content="" /> 
+	<meta property="og:image" content="" /> 
+	<meta property="og:url" content="" /> 
+	<meta property="og:type" content="article" />
+
+    <title>Loan Applicantion Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
+	<link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/fontawesome-all.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/swiper.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/magnific-popup.css')}}" rel="stylesheet">
+	<link href="{{url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet">
+
+	
+    <link rel="icon" href="{{url_for('static', filename='images/logo.svg')}}">
+    <script src="script.js"></script>
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    
+
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+        
+        <a class="navbar-brand logo-image" href="C:\Users\Acer\Desktop\Loan Approval\templates\index.html"><img src="{{url_for('static', filename='images/logo.svg')}}" alt="alternative"></a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+
+         <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+       
+        <a class="navbar-brand logo-image" href="C:\Users\Acer\Desktop\Loan Approval\templates\index.html"><img src="{{url_for('static', filename='images/logo.svg')}}"		alt="alternative"></a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#Predict">PREDICT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="report">VISUALIZE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#Insights">INSIGHTS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#contact">CONTACT</a>
+                </li>
+            </ul>
+           
+        </div>
+    </nav> 
+	    </nav> 
+
+    <header id="header" class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Loan Approval Prediction System</h1>
+                </div> 
+            </div>
+        </div> 
+    </header> 
+    
+
+    
+    <div class="ex-basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumbs">
+                        <a href="/">Home</a><i class="fa fa-angle-double-right"></i><span>Predict Loan Application Approval</span>
+                    </div>
+                </div> 
+            </div> 
+        </div> 
+    </div> 
+    
+
+    
+    <div id="Predict" class="ex-basic-2">
+        <script>
+            function validateForm() {
+                var fields = document.getElementsByClassName("form-control-input");
+                var isValid = true;
+                for (var i = 0; i < fields.length; i++) {
+                    if (fields[i].nodeName === 'SELECT') {
+                        if (fields[i].value === '') {
+                            fields[i].classList.add("is-invalid");
+                            isValid = false;
+                        } else {
+                            fields[i].classList.remove("is-invalid");
+                        }
+                    } else {
+                        if (fields[i].value.trim() === "") {
+                            fields[i].classList.add("is-invalid");
+                            isValid = false;
+                        } else {
+                            fields[i].classList.remove("is-invalid");
+                        }
+                    }
+                }
+                if (!isValid) {
+                    alert("Please fill out all fields.");
+                }
+                return isValid;
+            }
+        </script>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <form id="contactForm" data-toggle="validator" data-focus="false" action="{{ url_for('Loan_Application') }}" method="POST" onsubmit="return validateForm()">
+                            <div class="form-group">
+                                <select name="genders_type" class="form-control-input" required>
+                                    <option value="" disabled selected hidden>Gender:</option>
+                                    <option value="MALE">MALE</option>
+                                    <option value="FEMALE">FEMALE</option>
+                                </select>
+                                <label class="label-control" for="genders_type"></label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+        
+                            <div class="form-group">
+                                <select name="marital_status" class="form-control-input" required>
+                                    <option value="" disabled selected hidden>Marital status of the applicant:</option>
+                                    <option value="YES">YES</option>
+                                    <option value="NO">NO</option>
+                                </select>
+                                <label class="label-control" for="marital_status"> </label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+        
+                            <div class="form-group">
+                                <select name="education_status" class="form-control-input" required>
+                                    <option value="" disabled selected hidden>Education Status:</option>
+                                    <option value="GRADUATED">GRADUATED</option>
+                                    <option value="NOT GRADUATED">NOT GRADUATED</option>
+                                </select>
+                                <label class="label-control" for="education_status"> </label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+        
+                            <div class="form-group">
+                                <select name="dependents" class="form-control-input" required>
+                                    <option value="" disabled selected hidden>No. of Dependents:</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3+">3+</option>
+                                </select>
+                                <label class="label-control" for="dependents"> </label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+        
+                            <div class="form-group">
+                                <select name="self_employment" class="form-control-input" required>
+                                    <option value="" disabled selected hidden>Self-employed:</option>
+                                    <option value="YES">YES</option>
+                                    <option value="NO">NO</option>
+                                </select>
+                                <label class="label-control" for="self_employment"></label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <div class="form-group">
+                            <input name="applicantIncome" type="number" min="0" max="100000" class="form-control-input" id="applicantIncome"
+                            placeholder="Applicant Income: " required>
+                            <label class="label-control" for="applicantIncome"></label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+        
+                        <div class="form-group">
+                            <input name="coapplicantIncome" type="number" min="0" max="100000" class="form-control-input" id="coapplicantIncome"
+                            placeholder="Co-applicant Income:" required>
+                            <label class="label-control" for="coapplicantIncome"> </label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+        
+                        <div class="form-group">
+                            <input name="loan_amnt" class="form-control-input" type="number" min="1" max="100000" id="loan_amnt" 
+                            placeholder="Loan Amount:" required>
+                            <label class="label-control" for="loan_amnt"></label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+        
+                        <div class="form-group">
+                            <input name="term_d"  class="form-control-input" type="number" min="1" max="365" id="term_d" 
+                            placeholder="Loan Amount Term:" required>
+                            <label class="label-control" for="term_d"></label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+        
+                        <div class="form-group">
+                            <select name="credit_history" class="form-control-input" required>
+                                <option value="" disabled selected hidden>Credit History:</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                            </select>
+                            <label class="label-control" for="credit_history"></label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+        
+                        <div class="form-group">
+                            <select name="property_area" class="form-control-input" required>
+                                <option value="" disabled selected hidden>Property Area:</option>
+                                <option value="RURAL">RURAL</option>
+                                <option value="SEMIRURAL">SEMIRURAL</option>
+                                <option value="URBAN">URBAN</option>
+                            </select>
+                            <label class="label-control" for="property_area"></label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        
+        <button type="submit" 
+                    style="background-color: blue; color: white; border: none; padding: 15px 25px; font-size: 16px; border-radius: 5px; cursor: pointer;"
+                    class="form-control-submit-button">MAKE PREDICTION</button>
+					</form>
+					</div> 
+				<div class="result" align="center">
+						{% if result %}
+						{% for variable, value in original_input.items() %}
+						<br><b>{{ variable }}</b> : {{ value }}
+						{% endfor %}
+						<br>
+						<br> Loan Decision:
+						<p style="font-size:20px">{{ result }}</p>
+						{% endif %}
+				</div>
+        
+    </div> 
+
+    <div id=contact class="footer">
+        <div class="container">
+            <div class="row">
+            <img class="card-image" src="{{url_for('static', filename='images/ayoub.jpg')}}"  width="150" height="150" alt="alternative">
+
+                <div class="col-md-6">
+                    <div class="text-container about">
+                        <h4>Developed by:</h4>
+                        <h2 class="white">TSS group</h2>
+                        <p class="white"><i class="fas fa-briefcase">&nbsp;&nbsp;BSC.cs.it Ambition College </i></p>
+                        <p class="white"><i class="fa fa-map-marker" aria-hidden="true">&nbsp;&nbsp;Mid_Baneshwor</i></p>
+                        <p class="white"><i class="fa fa-envelope" aria-hidden="true">&nbsp;&nbsp;tssgrp@gmail.com</i></p>
+                    
+                    </div> 
+                </div> 
+                <div class="col-md-2">
+                    <div class="text-container">
+                        <h4>Connect</h4>
+                        <ul class="list-unstyled li-space-lg white">
+                            <li>
+                                <a class="white" href="#"><i class="fab fa-linkedin-in"></i></a>&nbsp;&nbsp;<a class="white" href="#"><i class="fab fa-github"></i></a>
+                            </li>
+                            
+                        </ul>
+                    </div> 
+                </div> 
+                <div class="col-md-2">
+                    <div class="text-container">
+                        <h4>Tools Used</h4>
+                        <ul class="list-unstyled li-space-lg">
+                            <li>
+                                <a class="white" href="#">Python</a>
+                            </li>
+                            <li>
+                               <a class="white" href="#">Seaborn &amp; Matplotlib</a>
+                            </li>
+                            <li class="media">
+                                <a class="white" href="#">Scikit-learn</a>
+                            </li>
+                            <li class="media">
+                                <a class="white" href="#">Flask</a>
+                            </li>
+                            <li class="media">
+                                <a class="white" href="#">Scikit-learn</a>
+                            </li>
+                            <li class="media">
+                                <a class="white" href="#">SweetViz</a>
+                            </li>
+                        </ul>
+                    </div> 
+                </div> 
+                
+            </div> 
+        </div> 
+    </div>   
+    
+     <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script> 
+	<script src="{{url_for('static', filename='js/popper.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/jquery.easing.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/jquery.magnific-popup.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/morphext.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/isotope.pkgd.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/validator.min.js')}}"></script> 
+	<script src="{{url_for('static', filename='js/scripts.js')}}"></script> 
+	<script src="{{url_for('static', filename='js/swiper.min.js')}}"></script> 
+
+</body>
+</html>
